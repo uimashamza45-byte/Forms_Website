@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Greenfield School — Excellence in Academics & Sports</title>
+  <meta name="description" content="Greenfield School: Balanced education — O-Level (Cambridge) and college programs, disciplined environment, scholarships, strong sports (basketball, football, badminton) and cooperative leadership." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #e6f7ea; /* light green */
+      --nav: #2f7a4a; /* pleasant darkish green (not too dark) */
+      --accent: #56b37a; 
+      --card: #ffffff;
+      --muted: #56606b;
+      --glass: rgba(255,255,255,0.6);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#123;}
+    body{background:linear-gradient(180deg,var(--bg),#f0fbf2);-webkit-font-smoothing:antialiased}
+
+    /* NAVBAR */
+    .navbar{position:sticky;top:0;z-index:40;background:var(--nav);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0.6rem 1rem;box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+    .brand{display:flex;align-items:center;gap:0.6rem;font-weight:700}
+    .brand .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#2f8e58);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+    .nav-links{display:flex;gap:1rem;align-items:center}
+    .nav-links a{color:#f6fff8;text-decoration:none;padding:0.45rem 0.6rem;border-radius:8px;font-weight:600}
+    .nav-links a:hover{background:rgba(255,255,255,0.06)}
+    .cta{background:#fff;color:var(--nav);padding:0.45rem 0.75rem;border-radius:8px;font-weight:700}
+
+    /* Hamburger for small screens */
+    .menu-toggle{display:none;background:transparent;border:0;color:#fff;font-size:1.3rem}
+
+    /* HERO */
+    .hero{padding:3.2rem 1rem 2rem;display:grid;grid-template-columns:1fr 480px;gap:2rem;align-items:center;max-width:1200px;margin:0 auto}
+    .hero-left h1{font-size:2rem;margin:0 0 0.45rem;color:#08371f}
+    .tagline{color:var(--muted);font-weight:600;margin-bottom:1rem}
+    .features{display:flex;gap:0.8rem;flex-wrap:wrap}
+    .pill{background:var(--card);padding:0.5rem 0.75rem;border-radius:999px;font-weight:600;box-shadow:0 6px 20px rgba(18,55,31,0.06)}
+
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.85),var(--glass));padding:1.2rem;border-radius:12px;box-shadow:0 12px 30px rgba(18,55,31,0.06)}
+    .hero-card h3{margin:0 0 0.6rem}
+    .hero-card p{margin:0;color:var(--muted)}
+
+    /* SECTIONS */
+    .container{max-width:1100px;margin:1.6rem auto;padding:0 1rem}
+    .grid{display:grid;gap:1rem}
+    .two{grid-template-columns:repeat(2,1fr)}
+    .three{grid-template-columns:repeat(3,1fr)}
+
+    .card{background:var(--card);padding:1.1rem;border-radius:12px;box-shadow:0 8px 20px rgba(2,40,18,0.03)}
+    .card h4{margin:0 0 0.6rem}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    /* Sports icons row */
+    .sports{display:flex;gap:0.6rem;flex-wrap:wrap}
+    .sport{flex:1 1 140px;min-width:120px;background:linear-gradient(180deg,#fbfff9,#f0fff6);border-radius:10px;padding:0.9rem;text-align:center}
+    .sport h5{margin:0 0 0.3rem}
+
+    /* PRINCIPAL card */
+    .principal{display:flex;gap:1rem;align-items:center}
+    .principal .portrait{width:88px;height:88px;border-radius:12px;background:linear-gradient(135deg,#fff,#f0fbf2);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--nav);box-shadow:0 10px 30px rgba(18,55,31,0.06)}
+
+    /* ACADEMICS */
+    .list{list-style:none;padding:0;margin:0}
+    .list li{padding:0.35rem 0;border-bottom:1px dashed #eef8ef;color:var(--muted)}
+
+    /* FOOTER */
+    footer{margin-top:2rem;padding:1.6rem 1rem;background:transparent;color:var(--muted);text-align:center}
+
+    /* RESPONSIVE */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;gap:1rem;padding-top:2rem}
+      .nav-links{display:none}
+      .menu-toggle{display:block}
+    }
+
+    @media (max-width:640px){
+      .three{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+      .brand .logo{width:40px;height:40px}
+      .hero-left h1{font-size:1.6rem}
+    }
+
+    /* small interactive touches */
+    .btn{display:inline-block;padding:0.5rem 0.8rem;border-radius:10px;background:var(--nav);color:#fff;font-weight:700;text-decoration:none}
+    .shadow-soft{box-shadow:0 10px 30px rgba(2,40,18,0.05)}
+
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <div class="logo">G</div>
+      <div>
+        <div style="font-size:0.95rem">Greenfield School</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.85);font-weight:600">Balanced learning • Sports • Scholarships</div>
+      </div>
+    </div>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#academics">Academics</a>
+      <a href="#sports">Sports</a>
+      <a href="#principal">Principal</a>
+      <a href="#admissions" class="cta">Admissions</a>
+    </nav>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Where discipline meets discovery</h1>
+        <div class="tagline">A warm, nurturing environment with modern classrooms, experienced teachers and thriving sports culture.</div>
+        <div class="features" role="list">
+          <div class="pill">O-Level (Cambridge) & College</div>
+          <div class="pill">Scholarships & Merit Awards</div>
+          <div class="pill">Basketball • Football • Badminton</div>
+          <div class="pill">Strong Teacher-Principal cooperation</div>
+        </div>
+
+        <div style="margin-top:1rem;display:flex;gap:0.7rem;align-items:center">
+          <a class="btn" href="#admissions">Apply Now</a>
+          <a style="text-decoration:none;color:var(--nav);font-weight:700;background:#fff;padding:0.5rem 0.75rem;border-radius:10px;" href="#contact">Contact</a>
+        </div>
+
+        <div style="margin-top:1.2rem;display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem">
+          <div class="card shadow-soft">
+            <h4>Discipline & Character</h4>
+            <p class="muted">We cultivate responsibility, respect and punctuality — preparing students for life beyond school.</p>
+          </div>
+          <div class="card shadow-soft">
+            <h4>Scholarships</h4>
+            <p class="muted">Merit-based and need-based scholarships reward academic performance, sporting excellence, and community service.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Welcome to Greenfield</h3>
+        <p class="muted">Greenfield provides a modern education that balances Cambridge O-Level pathways with local college preparation. Our teachers and principal work closely to design personal learning plans, monitor student progress and encourage extracurricular growth.</p>
+        <div style="margin-top:0.9rem">
+          <strong>Quick facts</strong>
+          <ul class="list" style="margin-top:0.6rem">
+            <li>Small class sizes with focused attention</li>
+            <li>Experienced Cambridge-aligned teachers</li>
+            <li>Broad sports program (basketball, football, badminton/racket sports)</li>
+            <li>Active parent-teacher-principal collaboration</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="container">
+      <div class="grid two">
+        <div class="card">
+          <h4>About Our School</h4>
+          <p class="muted">Greenfield combines the best of structured academics and hands-on learning. The campus is designed with bright classrooms, science labs, a library, and sports courts. We emphasize values, discipline and kindness while encouraging creativity and critical thinking.</p>
+        </div>
+        <div class="card">
+          <h4>Principal & Teacher Cooperation</h4>
+          <p class="muted">The principal leads an open, collaborative culture where teachers contribute to curriculum planning, student welfare and extracurricular management. Regular meetings, observations and professional development ensure teachers stay well-equipped, supported and motivated.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="academics" class="container">
+      <h3 style="margin-bottom:0.6rem">Academics</h3>
+      <div class="grid three">
+        <div class="card">
+          <h4>O-Level (Cambridge)</h4>
+          <p class="muted">Our Cambridge O-Level program follows internationally recognized standards. Students receive focused support for subject choices, exam preparation and practical coursework. Experienced teachers guide each student toward high achievement and university readiness.</p>
+        </div>
+        <div class="card">
+          <h4>College & Local Programs</h4>
+          <p class="muted">For students aiming for local colleges, we provide tailored programs that prepare them for local board exams, college entrance tests and vocational pathways. Counseling helps students choose the right stream.</p>
+        </div>
+        <div class="card">
+          <h4>Academic Support</h4>
+          <p class="muted">Remedial classes, tutoring clinics and study workshops are available. Merit awards and scholarship interviews recognize top performers while mentorship programs help students stay on track.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sports" class="container">
+      <h3 style="margin-bottom:0.6rem">Sports & Physical Education</h3>
+      <div class="card">
+        <p class="muted">We believe sports are essential to character building, fitness and teamwork. Our structured sports program includes regular PE lessons, inter-house tournaments, and after-school clubs.</p>
+        <div style="margin-top:1rem" class="sports">
+          <div class="sport">
+            <h5>Basketball</h5>
+            <p class="muted">Coaching squads for all ages, court access and competitive fixtures.</p>
+          </div>
+          <div class="sport">
+            <h5>Football</h5>
+            <p class="muted">Training and local league participation with dedicated coach staff.</p>
+          </div>
+          <div class="sport">
+            <h5>Badminton & Racket Sports</h5>
+            <p class="muted">Indoor courts and rackets provided — shuttle-based drills and tournaments.</p>
+          </div>
+          <div class="sport">
+            <h5>Other Games</h5>
+            <p class="muted">Athletics, table tennis, and recreational clubs to keep students active.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="principal" class="container">
+      <h3 style="margin-bottom:0.6rem">Message from the Principal</h3>
+      <div class="card principal">
+        <div class="portrait">PR</div>
+        <div>
+          <p class="muted">At Greenfield, we place students at the heart of everything we do. Through strong teacher-principal cooperation and a disciplined, yet caring environment, we help students achieve excellence in academics and sports. Parents are partners in this journey — together we prepare the next generation of confident, ethical and capable citizens.</p>
+          <p style="margin-top:0.6rem;font-weight:700;color:var(--nav)">— Principal, Greenfield School</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="admissions" class="container">
+      <h3 style="margin-bottom:0.6rem">Admissions & Scholarships</h3>
+      <div class="grid two">
+        <div class="card">
+          <h4>How to Apply</h4>
+          <ol class="muted">
+            <li>Fill the application form and attach recent report cards.</li>
+            <li>Attend an entrance assessment and interview (if required).</li>
+            <li>Successful applicants receive an offer letter and scholarship info (if eligible).</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h4>Scholarships</h4>
+          <p class="muted">Scholarships are awarded for academic merit, sporting achievements and community leadership. Financial aid is also available for families in need — applications are assessed confidentially.</p>
+          <p style="margin-top:0.6rem" class="muted"><strong>Note:</strong> Scholarships support O-Level and college program students equally.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container" style="margin-bottom:2rem">
+      <h3 style="margin-bottom:0.6rem">Contact & Visit</h3>
+      <div class="card">
+        <div class="grid two">
+          <div>
+            <p class="muted">Schedule a campus visit, meet the principal and watch a coaching session. We welcome parents and guardians to see our classrooms, labs and sports facilities.</p>
+            <p style="margin-top:0.6rem"><strong>Email:</strong> admissions@greenfield.example</p>
+            <p><strong>Phone:</strong> +92 300 0000000</p>
+          </div>
+          <div>
+            <form id="contactForm" onsubmit="return submitForm(event)">
+              <label class="muted">Your name</label><br>
+              <input id="name" required placeholder="Full name" style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid #e6f6ea;margin-top:0.4rem"><br><br>
+              <label class="muted">Email</label><br>
+              <input id="email" type="email" required placeholder="you@example.com" style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid #e6f6ea;margin-top:0.4rem"><br><br>
+              <label class="muted">Message</label><br>
+              <textarea id="message" required placeholder="Short message" style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid #e6f6ea;margin-top:0.4rem"></textarea><br>
+              <button type="submit" class="btn" style="margin-top:0.6rem">Send</button>
+              <div id="formMsg" style="margin-top:0.6rem;color:var(--nav);font-weight:700"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="max-width:900px;margin:0 auto">
+        <div style="font-weight:700">Greenfield School — Excellence in Learning & Play</div>
+        <div style="margin-top:0.6rem" class="muted">We provide disciplined education, strong teacher-principal cooperation, Cambridge O-Level pathways and vibrant sports — all in a caring community.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    toggle.addEventListener('click', ()=>{
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      if(nav.style.display === 'flex'){
+        nav.style.display = '';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.right = '1rem';
+        nav.style.top = '64px';
+        nav.style.background = 'linear-gradient(180deg, rgba(47,122,74,0.98), rgba(47,122,74,0.95))';
+        nav.style.padding = '0.6rem';
+      }
+    });
+
+    // Simple form handling (demo)
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const output = document.getElementById('formMsg');
+      if(!name || !email || !msg){
+        output.textContent = 'Please fill all required fields.';
+        return false;
+      }
+      output.textContent = 'Thanks, ' + (name.split(' ')[0] || name) + '! We received your message.';
+      // In a real site you'd send via fetch to a backend — here we just simulate success.
+      setTimeout(()=>{document.getElementById('contactForm').reset();},1200);
+      return false;
+    }
+
+    // Small enhancement: shrink navbar on scroll
+    const navBar = document.querySelector('.navbar');
+    let lastScroll = 0;
+    window.addEventListener('scroll', ()=>{
+      const y = window.scrollY;
+      if(y>80){
+        navBar.style.padding = '0.35rem 1rem';
+        navBar.style.backdropFilter = 'saturate(120%) blur(6px)';
+      } else {
+        navBar.style.padding = '0.6rem 1rem';
+        navBar.style.backdropFilter = '';
+      }
+    });
+  </script>
+</body>
+</html>

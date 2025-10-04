@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit your forms to Principal</title>
+
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial,  sans-serif;
+            background: linear-gradient(135deg, cyan, purple, pink);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 0;
+            overflow-y: auto;          
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0 ,0 ,0 ,0.2);
+            width: 400px;
+            max-width: 90%;         
+        }
+        .form-container h2{
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        label{
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+        input,select,textarea{
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        input[type="radio"],input[type="checkbox"]{
+            width: auto;
+            margin-right: 6px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #00c6ff, #ff0080);
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        small {
+            color: #666;
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+    
+    </style>
+
+</head>
+<body>
+    <div class="form-container">
+        <h2>School Election Votings</h2>
+        <form id="electionForm">
+
+            <label for="name">Name</label>
+            <input type="text"  id="name" placeholder="Enter your name"required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your Email"required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password must be atleast 8 character"required>
+
+            <label>Gender</label>
+            <div class="radio-group">
+                <input type="radio" name="gender" value="Male" required>Male
+                <input type="radio" name="gender" value="Female"required>Female
+                <input type="radio" name="gender" value="other">Other
+            </div>
+
+            <label for="grade">Select Grade</label>
+            <select  id="grade"required>
+                <option value="">--Select Grade--</option>
+                <option>I</option>
+                <option>II</option>
+                <option>III</option>
+                <option>IV</option>
+                <option>V</option>
+                <option>VI</option>
+                <option>VII</option>
+                <option>VIII</option>
+                <option>IX</option>
+                <option>X</option>
+                <option>XI</option>
+                <option>XII</option>
+            </select>
+
+            <label>Parent Approval</label>
+            <div class="checkbox-group">
+                <input type="checkbox" name="parent" value="Father">Father
+                <input type="checkbox" name="parent" value="Mother">Mother
+                <input type="checkbox" name="parent" vlaue="Guardian">Guardian
+            </div>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number"required>
+
+            <label for="feedback">Feedback</label>
+            <textarea id="feedback" placeholder="Enter feedback..."></textarea>
+
+            <button type="submit">Submit</button>
+            <small>Note:-Your son must be puntual and have to perform duty in according times!</small>
+
+        </form>
+    </div>
+   <script>
+    document.getElementById("electionForm").addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        let password = document.getElementById("password").value;
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let grade = document.getElementById("grade").value;
+        let gender = document.querySelector('input[name="gender"]:checked');
+        let parentCheck = document.querySelector('input[name="parent"]:checked');
+
+        if (!name || !email || !phone || !grade || !gender || !parentCheck) {
+            alert("Please fill all required fields!");
+            return;
+        }
+
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters long!");
+            return;
+        }
+
+        // ✅ Reset the form
+        this.reset();
+
+        // ✅ Redirect to your local APSACS website file
+        window.location.href = "apsacs.html";
+    });
+</script>
+
+
+</body>
+</html>
